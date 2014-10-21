@@ -19,9 +19,7 @@ describe Dataset do
     context "when calculating the chi-square probability" do
       subject(:probabilities) { dataset.calculate_group_probabilities.round(4) }
       it "raises Insufficient Data Error" do
-        expect { subject }.to raise_error { |error|
-          expect(error).to be_a(ABAnalyzer::InsufficientDataError)
-        }
+        raise_error(ABAnalyzer::InsufficientDataError)
       end
     end
 
@@ -31,9 +29,7 @@ describe Dataset do
 
     context "when showing the correct winner" do
       it "raises Insufficient Data Error" do
-        expect { dataset.show_winner }.to raise_error { |error|
-          expect(error).to be_a(ABAnalyzer::InsufficientDataError)
-        }
+        raise_error(ABAnalyzer::InsufficientDataError)
       end
     end
   end
