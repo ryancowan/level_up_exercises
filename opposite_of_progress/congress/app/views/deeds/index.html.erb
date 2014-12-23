@@ -1,7 +1,7 @@
 <h3>All Good Deeds</h3>
 
 <%= render partial: "deed_list_item", collection: @results %>
-<%= "There are no good deeds to show" if @results.count == 0 %>
+<%= "There are no good deeds to show" if @results.empty? %>
 
 <hr />
 

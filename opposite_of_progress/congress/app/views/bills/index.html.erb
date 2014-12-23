@@ -1,5 +1,5 @@
 <header>
-  <div style="float:right;">
+  <div class="sort-section">
     <%=
       select("bill_sort",
              "option",
@@ -13,7 +13,7 @@
 
 <%= render @results %>
 
-<%= "There are no bills to show" if @results.count == 0 %>
+<%= "There are no bills to show" if @results.empty? %>
 
 <hr />
 

@@ -12,7 +12,7 @@
   <% @related_bills.each do |bill| %>
     <%= render bill %>
   <% end %>
-  <%= "There are no related bills" if @related_bills.count == 0 %>
+  <%= "There are no related bills" if @related_bills.empty? %>
 </blockquote>
 
 <hr />

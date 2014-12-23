@@ -34,3 +34,8 @@ blockquote {
 .user-section {
   float:right; margin:10px; text-align:right;
 }
+
+.sort-section {
+  float:right;
+  width: 200px;
+}

@@ -1,7 +1,7 @@
 # Deeds helper module
 module DeedsHelper
   def self.law_voted_on
-    Bill.order(:updated_at).all.each do |bill|
+    Bill.order(:updated_at).each do |bill|
       if bill.last_vote_at && bill.short_title
         deed_text = "#{bill.short_title} was last voted on " \
           "#{ApplicationHelper.date_display(bill.last_vote_at)}"
@@ -12,7 +12,7 @@ module DeedsHelper
   end
 
   def self.enacted_into_law
-    Bill.order(:updated_at).all.each do |bill|
+    Bill.order(:updated_at).each do |bill|
       if bill.congress == 113 && bill.enacted_on && bill.short_title
         deed_text = "#{bill.short_title} was enacted on " \
           "#{ApplicationHelper.date_display(bill.enacted_on)}"
@@ -30,6 +30,9 @@ module DeedsHelper
     deed.save
   end
 
+
+
+  #TODO remove these when entities work properly
   def self.related_legislator(deed)
     Legislator.where(bioguide_id: deed.bioguide_id).first
   end

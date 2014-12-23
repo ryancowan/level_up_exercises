@@ -1,5 +1,5 @@
 <header>
-  <div style="float:right;">
+  <div class="sort-section">
     <%=
       select("legislator_sort",
              "option",
@@ -14,7 +14,7 @@
 <% @results.each do |result| %>
   <div><%= render result %></div>
 <% end %>
-<%= "There are no legislators to show" if @results.count == 0 %>
+<%= "There are no legislators to show" if @results.empty? %>
 
 <hr />
 

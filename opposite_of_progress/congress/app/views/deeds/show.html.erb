@@ -9,7 +9,7 @@
 
 <h4>Legislator</h4>
 <blockquote>
-  <%= render partial: "legislators/legislator", locals: {legislator: @legislator, deed: @deed} %>
+  <%= render @legislator %>
 </blockquote>
 
 <h4>Bill</h4>
@@ -22,7 +22,7 @@
   <% @related_deeds.each do |deed| %>
     <%= render partial: "deeds/deed_stub_item", locals: {deed: deed} %>
   <% end %>
-  <%= "There are no related deeds" if @related_deeds.count == 0 %>
+  <%= "There are no related deeds" if @related_deeds.empty? %>
 </blockquote>
 
 <hr />
