@@ -1,5 +1,7 @@
 # Base Legislator class
 class Legislator < ActiveRecord::Base
+  has_many :deeds, primary_key: "bioguide_id", foreign_key: "bioguide_id"
+
   scope :by_bioguide_id, ->(id) { where(bioguide_id: id).first }
   scope :all_sorted, ->(page, sort_by) { order(sort_by).paginate(page: page) }
 

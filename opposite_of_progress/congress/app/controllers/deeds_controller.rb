@@ -7,9 +7,8 @@ class DeedsController < ApplicationController
   end
 
   def show
-    @legislator = Legislator.where(bioguide_id: @deed.bioguide_id).first
-    @bill = Bill.where(bill_id: @deed.bill_id).first
-
+    @legislator = @deed.legislator
+    @bill = @deed.bill
     @related_deeds = Deed.all_related(@deed)
   end
 

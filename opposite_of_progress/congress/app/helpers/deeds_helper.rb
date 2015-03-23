@@ -29,15 +29,4 @@ module DeedsHelper
                                   occurrence_date: bill[bill_date_field])
     deed.save
   end
-
-
-
-  #TODO remove these when entities work properly
-  def self.related_legislator(deed)
-    Legislator.where(bioguide_id: deed.bioguide_id).first
-  end
-
-  def self.related_bill(deed)
-    Bill.where(bill_id: deed.bill_id).first
-  end
 end

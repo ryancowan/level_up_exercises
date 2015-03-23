@@ -4,13 +4,13 @@
   <div class="row">
     <div class="large-6 columns">
       <% if deed_list_item.bioguide_id %>
-        <% legislator = DeedsHelper.related_legislator deed_list_item %>
+        <% legislator = deed_list_item.legislator deed_list_item %>
         <%= render legislator %>
       <% end %>
     </div>
     <div class="large-6 columns">
       <% if deed_list_item.bill_id %>
-        <% bill = DeedsHelper.related_bill deed_list_item %>
+        <% bill = deed_list_item.bill deed_list_item %>
         <%= render bill %>
       <% end %>
     </div>

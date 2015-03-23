@@ -1,5 +1,7 @@
 # Base Bill class
 class Bill < ActiveRecord::Base
+  has_one :deed
+
   scope :by_sponsor_id, ->(id) { where(sponsor_id: id) }
   scope :all_sorted, ->(page, sort_by) { order(sort_by).paginate(page: page) }
 
