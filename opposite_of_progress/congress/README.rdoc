@@ -30,6 +30,6 @@
 
 * Services (job queues, cache servers, search engines, etc.)
     Sync bills and legislators data:
-      rake cron
+      rake data
     Create good deeds (typically done after syncing data)
       rake deeds
